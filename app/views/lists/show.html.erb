@@ -4,11 +4,10 @@
 
 <ul>
   <div class="cards">
-    <% @movies.each do |movie| %>
+    <% @list.bookmarks.each do |bookmark| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(movie.poster_url)">
-        <%= movie.title %>
-        <%= movie.overview %>
-        <%= movie.rating %>
+        <%= bookmark.comment %>
+        <%= bookmark.movie.title %>
       </div>
     <% end %>
   </div>

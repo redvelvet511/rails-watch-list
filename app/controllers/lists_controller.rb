@@ -5,7 +5,7 @@ class ListsController < ApplicationController
   end
 
   def show
-    @movies = Movie.all
+    @list = List.find(params[:id])
   end
 
   def new
@@ -16,7 +16,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
 
     if @list.save
-      redirect_to "/lists", notice: "List was successfully created."
+      redirect_to "", notice: "List was successfully created.",
     else
       render :new, status: :unprocessable_entity
     end
