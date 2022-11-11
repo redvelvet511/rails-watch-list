@@ -1,15 +1,15 @@
-<h1>What do you want to add?</h1>
+<h1>Movies</h1>
 
 <button type="button" class="btn btn-success">Add a movie</button>
 
 <ul>
-  <% @movies.each do |movie| %>
   <div class="cards">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(movie.poster_url)">
-      <%= movie.title %>
-      <%= movie.overview %>
-      <%= movie.rating %>
-    </div>
+    <% @movies.each do |movie| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(movie.poster_url)">
+        <%= movie.title %>
+        <%= movie.overview %>
+        <%= movie.rating %>
+      </div>
+    <% end %>
   </div>
-  <% end %>
 </ul>
